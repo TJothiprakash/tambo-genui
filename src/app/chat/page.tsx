@@ -4,7 +4,7 @@ import { MessageThreadFull } from "@/components/tambo/message-thread-full";
 import { useMcpServers } from "@/components/tambo/mcp-config-modal";
 import { components, tools } from "@/lib/tambo";
 import { TamboProvider } from "@tambo-ai/react";
-import { InteractableFabricOptionCard } from "@/components/fabric/InteractableFabricOptionCard";
+import { InteractableFabricSelector } from "@/components/fabric/InteractableFabricSelector";
 
 /**
  * Chat page with GenUI (left) and persistent interactables (right)
@@ -28,25 +28,7 @@ export default function Home() {
 
         {/* RIGHT — Persistent Interactables (35%) */}
         <div className="w-[35%] bg-gray-50 p-4 overflow-y-auto">
-          <InteractableFabricOptionCard
-            id="linen"
-            name="Linen"
-            gsm={160}
-            costPerMeter={260}
-            breathability={9}
-            sustainabilityScore={9}
-            selected={false}
-          />
-
-          <InteractableFabricOptionCard
-            id="cotton"
-            name="Cotton"
-            gsm={140}
-            costPerMeter={220}
-            breathability={7}
-            sustainabilityScore={6}
-            selected={false}
-          />
+          <InteractableFabricSelector />
         </div>
       </div>
     </TamboProvider>
